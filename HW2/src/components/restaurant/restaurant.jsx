@@ -1,12 +1,9 @@
-import { restaurants } from "../../constants/mock";
 import { Menu } from "../menu/menu";
 import { Reviews } from "../reviews/reviews";
 
 export const Restaurant = ({name, menu, reviews}) => {
     if (!name) {
-        name = restaurants[0].name;
-        menu = restaurants[0].menu;
-        reviews = restaurants[0].reviews;
+        return null;
     }
 
     return <div>
