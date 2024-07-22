@@ -3,5 +3,5 @@ export const Ingredients = ({ ingredient }) => {
     return null;
   }
 
-  return <span style={{ marginRight: `10px` }}>{ingredient}</span>;
+  return <span>{ingredient}</span>;
 };

@@ -1,6 +1,8 @@
 import { Menu } from "../menu/menu";
 import { ReviewForm } from "../review-form/review-form";
 import { Review } from "../review/review";
+import styles from "./styles.module.css";
+import classnames from "classnames";
 
 export const Restaurant = ({ name, menu, reviews }) => {
   if (!name) {
@@ -8,12 +10,12 @@ export const Restaurant = ({ name, menu, reviews }) => {
   }
 
   return (
-    <div>
-      <h2>"{name}"</h2>
-
+    <div className={classnames(styles.restaurant)}>
+      <h2 className={classnames(styles.nameRest)}>"{name}"</h2>
+      <h3>Menu:</h3>
       <ul>
         {menu.map(({ name, price, ingredients }) => (
-          <li>
+          <li className={classnames(styles.card)}>
             <Menu name={name} price={price} ingredients={ingredients} />
           </li>
         ))}
@@ -21,7 +23,7 @@ export const Restaurant = ({ name, menu, reviews }) => {
       <h3>Reviews:</h3>
       <ul>
         {reviews.map(({ user, text, rating }) => (
-          <li>
+          <li className={classnames(styles.card, styles.review)}>
             <Review user={user} text={text} rating={rating} />
           </li>
         ))}

@@ -1,10 +1,12 @@
 import { useReducer } from "react";
 import { ContainerCounter } from "../counter/container";
+import styles from "./styles.module.css";
+import classnames from "classnames";
 
 const INITIAL_FORM = {
   name: ``,
   text: ``,
-  save: ``,
+  reset: 0,
 };
 
 function reducer(state, { type, payload }) {
@@ -19,10 +21,10 @@ function reducer(state, { type, payload }) {
         ...state,
         text: payload,
       };
-    case `setSave`:
+    case `setReset`:
       return {
         ...INITIAL_FORM,
-        save: payload,
+        reset: payload,
       };
     default:
       return state;
@@ -32,10 +34,10 @@ function reducer(state, { type, payload }) {
 export const ReviewForm = () => {
   const [form, dispatch] = useReducer(reducer, INITIAL_FORM);
 
-  const { name, text, save } = form;
+  const { name, text, reset } = form;
 
   return (
-    <div>
+    <div className={classnames(styles.card)}>
       <div>
         <span>Name:</span>
         <input
@@ -56,14 +58,16 @@ export const ReviewForm = () => {
       </div>
       <div>
         <span>Rating:</span>
-        <ContainerCounter />
+        <ContainerCounter max={5} />
       </div>
       <button
+        className={classnames(styles.button)}
+        value={reset}
         onClick={(event) => {
-          dispatch({ type: `setSave`, payload: event.target.value });
+          dispatch({ type: `setReset`, payload: event.target.value });
         }}
       >
-        Save
+        Send
       </button>
     </div>
   );

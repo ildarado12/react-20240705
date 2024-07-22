@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { Counter } from "../../../../HW2/src/components/counter/counter";
+import { Counter } from "./counter";
 
-export const ContainerCounter = () => {
+export const ContainerCounter = ({ min = 0, max = 5, step = 1 }) => {
   const [value, setValue] = useState(0);
 
   const decrement = () => {
-    if (value === 0) {
+    if (value === min) {
       setValue(value);
     } else {
-      setValue(value - 1);
+      setValue(value - step);
     }
   };
   const increment = () => {
-    if (value === 5) {
+    if (value === max) {
       setValue(value);
     } else {
-      setValue(value + 1);
+      setValue(value + step);
     }
   };
 
