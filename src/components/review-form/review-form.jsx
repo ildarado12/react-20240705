@@ -1,7 +1,6 @@
 import { useReducer } from "react";
 import { ContainerCounter } from "../counter/container";
 import styles from "./styles.module.css";
-import classnames from "classnames";
 
 const INITIAL_FORM = {
   name: ``,
@@ -37,9 +36,9 @@ export const ReviewForm = () => {
   const { name, text, reset } = form;
 
   return (
-    <div className={classnames(styles.card)}>
+    <div className={styles.card}>
       <div>
-        <span className={classnames(styles.name)}>Name:</span>
+        <span className={styles.name}>Name:</span>
         <input
           value={name}
           onChange={(event) => {
@@ -57,11 +56,11 @@ export const ReviewForm = () => {
         ></input>
       </div>
       <div>
-        <span className={classnames(styles.rating)}>Rating:</span>
+        <span className={styles.rating}>Rating:</span>
         <ContainerCounter max={5} />
       </div>
       <button
-        className={classnames(styles.button)}
+        className={styles.button}
         value={reset}
         onClick={(event) => {
           dispatch({ type: `setReset`, payload: event.target.value });

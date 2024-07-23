@@ -2,7 +2,6 @@ import { useState } from "react";
 import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../restaurant/restaurant";
 import styles from "./styles.module.css";
-import classnames from "classnames";
 
 export const RestaurantTab = () => {
   const [activeRestId, setActiveRestId] = useState(restaurants[0].id);
@@ -11,11 +10,11 @@ export const RestaurantTab = () => {
 
   return (
     <div>
-      <ul className={classnames(styles.restaurants)}>
+      <ul className={styles.restaurants}>
         {restaurants.map(({ id, name }) => (
-          <li className={classnames(styles.restauranttab)}>
+          <li className={styles.restauranttab}>
             <button
-              className={classnames(styles.button)}
+              className={styles.button}
               onClick={() => setActiveRestId(id)}
               disabled={id === activeRestId}
             >
