@@ -15,16 +15,14 @@
     box-sizing: border-box;
 }
 
-.button {
-    font-weight: bold;
-    min-width: 77px;
-    margin-top: 3px;
-}
-
 .name {
     font-weight: bold;
 }
 
 .rating {
     font-style: italic;
+}
+
+.input {
+    background-color: #f5f6f7;
 }
