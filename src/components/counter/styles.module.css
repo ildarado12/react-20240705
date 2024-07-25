@@ -1,0 +1,24 @@
+.counter {
+    margin: 3px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #bbb;
+    padding: 3px;
+    margin: 1px;
+    min-width: 30px;
+    border-color: #060606;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: transparent;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #bbb;
+}

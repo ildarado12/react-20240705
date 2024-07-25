@@ -1,0 +1,23 @@
+.nameRest {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #c95422;
+    padding-left: 10px;
+}
+
+.card {
+    display: inline-block;
+    background-color: #bbb;
+    border: solid;
+    min-width: 300px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.review {
+    display: block;
+}
+
+h3 {
+    margin-left: 30px;
+}
