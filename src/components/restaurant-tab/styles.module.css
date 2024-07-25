@@ -8,19 +8,3 @@
 .restauranttab {
     display: inline-block;
 }
-
-.button {
-    margin: 20px;
-    background-color: #bbb;
-    border: #060606 2px;
-    font-weight: bold;
-    font-size: large;
-}
-
-.button:disabled {
-    color: rgba(201, 84, 34, 0.5);
-}
-
-.button:hover {
-    cursor: pointer;
-}
