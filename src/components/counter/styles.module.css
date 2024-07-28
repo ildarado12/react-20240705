@@ -2,3 +2,7 @@
     margin: 3px;
     font-weight: bold;
 }
+
+.login {
+    display: none;
+}

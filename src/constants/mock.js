@@ -140,3 +140,14 @@ export const restaurants = [
       ],
     },
   ];
+
+  export const users = [
+    {
+      id: "0000000",
+      name: "Admin"
+    },
+    {
+      id: "0000001",
+      name: "UserDefault"
+    }
+  ]
