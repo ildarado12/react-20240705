@@ -15,7 +15,7 @@ export const Menu = ({ name, price, ingredients }) => {
           <Ingredients ingredient={ingredient} />
         ))}
       </p>
-      <ContainerCounter min={0} max={100} step={1} />
+      <ContainerCounter min={0} max={99} step={1} />
     </div>
   );
 };
