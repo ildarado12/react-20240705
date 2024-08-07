@@ -13,7 +13,6 @@ export const App = () => {
       <UserContextProvider>
         <ThemeContextProvider>
           <Layout>
-            <RestaurantTab />
             <RestaurantsList />
           </Layout>
         </ThemeContextProvider>
