@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
+import { selectRestaurantById } from "../../redux/entities/restaurant";
 import { Review } from "../review/review";
 import styles from "./styles.module.css";
-import classnames from "classnames";
-import { selectRestaurantById } from "../../redux/entities/restaurant";
 
 export const Restaurant = ({ id }) => {
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
@@ -14,13 +13,15 @@ export const Restaurant = ({ id }) => {
   }
 
   return (
-    <div className={classnames(styles.restaurant)}>
-      <h2 className={classnames(styles.nameRest)}>"{name}"</h2>
+    <div className={styles.restaurant}>
+      <h2 className={styles.nameRest}>"{name}"</h2>
       <h3>Reviews:</h3>
       {reviewsIds?.length ? (
         <ul>
-          {reviewsIds.map((text) => {
-            <Review id={text} />;
+          {reviewsIds.map((reviewId) => {
+            <li>
+              <Review id={reviewId} />
+            </li>;
           })}
         </ul>
       ) : null}

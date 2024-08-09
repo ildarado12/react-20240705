@@ -3,10 +3,13 @@ import styles from "./styles.module.css";
 import { selectReviewById } from "../../redux/entities/review";
 
 export const Review = ({ id }) => {
-  const { text } = useSelector((state) => selectReviewById(state, id));
-  console.log(text);
+  const review = useSelector((state) => {
+    console.log(id);
+    selectReviewById(state, id);
+  });
+  console.log(review);
 
-  //const { userId, text, rating } = review || {};
+  const { userId, text, rating } = review || {};
 
   if (!text) {
     return null;
