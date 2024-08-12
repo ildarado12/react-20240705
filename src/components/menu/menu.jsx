@@ -24,7 +24,7 @@ export const Menu = ({ id }) => {
       <p className={styles.ingredients}>Ingredients:</p>
       <p className={styles.ingredient}>
         {ingredients.map((ingredient) => (
-          <Ingredients ingredient={ingredient} />
+          <Ingredients ingredient={ingredient} key={ingredient} />
         ))}
       </p>
       {user === `Login` ? null : <ContainerCounter min={0} max={99} step={1} />}

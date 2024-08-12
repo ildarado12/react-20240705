@@ -7,17 +7,9 @@ import { selectUserById } from "../../redux/entities/user";
 export const UserButton = () => {
   const { value, toggleUser } = useUser();
 
-  const user = useSelector((state) => {
-    return selectUserById(state, "a304959a-76c0-4b34-954a-b38dbf310360");
-  });
-
-  const { name } = user || {};
-
   return (
     <div>
-      <h4 className={value === "Login" ? styles.hidden : styles.user}>
-        {name}
-      </h4>
+      {value === "Login" ? null : <h4 className={styles.user}>DefaultUser</h4>}
       <Button
         text={value === "Login" ? "Login" : "Exit"}
         onClick={toggleUser}

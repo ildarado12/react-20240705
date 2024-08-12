@@ -13,7 +13,7 @@ export const RestaurantsList = () => {
   return (
     <ul>
       {ids.map((id) => (
-        <li className={styles.restaurant}>
+        <li className={styles.restaurant} key={id}>
           <Restaurant id={id} />
         </li>
       ))}

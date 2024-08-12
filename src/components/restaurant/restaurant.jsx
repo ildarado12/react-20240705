@@ -23,7 +23,10 @@ export const Restaurant = ({ id }) => {
         <ul>
           {menuIds.map((menuId) => {
             return (
-              <li className={classNames(styles.card, styles.review)}>
+              <li
+                className={classNames(styles.card, styles.review)}
+                key={menuId}
+              >
                 <Menu id={menuId} />
               </li>
             );
@@ -35,7 +38,10 @@ export const Restaurant = ({ id }) => {
         <ul>
           {reviewsIds.map((reviewId) => {
             return (
-              <li className={classNames(styles.card, styles.review)}>
+              <li
+                className={classNames(styles.card, styles.review)}
+                key={reviewId}
+              >
                 <Review id={reviewId} />
               </li>
             );
