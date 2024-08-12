@@ -20,7 +20,7 @@ export const Menu = ({ id }) => {
 
   return (
     <div>
-      <span> "{name}"</span> - {price}$
+      <span className={styles.dishe}> "{name}"</span> - {price}$
       <p className={styles.ingredients}>Ingredients:</p>
       <p className={styles.ingredient}>
         {ingredients.map((ingredient) => (

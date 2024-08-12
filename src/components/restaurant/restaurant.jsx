@@ -4,6 +4,7 @@ import { Review } from "../review/review";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { Menu } from "../menu/menu";
+import { ReviewForm } from "../review-form/review-form";
 
 export const Restaurant = ({ id }) => {
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
@@ -17,18 +18,6 @@ export const Restaurant = ({ id }) => {
   return (
     <div>
       <h2 className={styles.nameRest}>"{name}"</h2>
-      <h3>Reviews:</h3>
-      {reviewsIds?.length ? (
-        <ul>
-          {reviewsIds.map((reviewId) => {
-            return (
-              <li className={classNames(styles.card, styles.review)}>
-                <Review id={reviewId} />
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
       <h3>Menu:</h3>
       {menuIds?.length ? (
         <ul>
@@ -41,6 +30,19 @@ export const Restaurant = ({ id }) => {
           })}
         </ul>
       ) : null}
+      <h3>Reviews:</h3>
+      {reviewsIds?.length ? (
+        <ul>
+          {reviewsIds.map((reviewId) => {
+            return (
+              <li className={classNames(styles.card, styles.review)}>
+                <Review id={reviewId} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
+      <ReviewForm />
     </div>
   );
 };

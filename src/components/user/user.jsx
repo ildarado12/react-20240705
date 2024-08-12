@@ -15,7 +15,7 @@ export const User = ({ id }) => {
 
   return (
     <div>
-      <span className={styles.user}>{name}</span>
+      <span className={styles.user}>{name}:</span>
     </div>
   );
 };
