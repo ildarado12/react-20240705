@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/entities/restaurant";
 import { Restaurant } from "../restaurant/restaurant";
+import styles from "./styles.module.css";
 
 export const RestaurantsList = () => {
   const ids = useSelector(selectRestaurantsIds);
@@ -12,7 +13,7 @@ export const RestaurantsList = () => {
   return (
     <ul>
       {ids.map((id) => (
-        <li>
+        <li className={styles.restaurant}>
           <Restaurant id={id} />
         </li>
       ))}

@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
-import styles from "./styles.module.css";
 import { selectReviewById } from "../../redux/entities/review";
+import { User } from "../user/user";
+import styles from "./styles.module.css";
 
 export const Review = ({ id }) => {
   const review = useSelector((state) => {
-    console.log(id);
-    selectReviewById(state, id);
+    return selectReviewById(state, id);
   });
-  console.log(review);
 
   const { userId, text, rating } = review || {};
 
@@ -15,13 +14,11 @@ export const Review = ({ id }) => {
     return null;
   }
 
-  return <div>{text}</div>;
+  return (
+    <div>
+      <User id={userId} />
+      <span> "{text}"</span>
+      <p className={styles.rating}>Rating: {rating}</p>
+    </div>
+  );
 };
-
-/* return (
-  <div>
-    <span className={styles.user}>{userId}</span>:<span> "{text}"</span>
-    <p className={styles.rating}>Rating: {rating}</p>
-  </div>
-);
- */

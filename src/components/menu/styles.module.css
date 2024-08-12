@@ -5,4 +5,9 @@
 .ingredients {
     font-weight: 400;
     font-style: italic;
+    margin: 0;
+}
+
+.ingredient {
+    margin: 0;
 }
