@@ -23,8 +23,8 @@ export const Menu = ({ id }) => {
       <span className={styles.dishe}> "{name}"</span> - {price}$
       <p className={styles.ingredients}>Ingredients:</p>
       <p className={styles.ingredient}>
-        {ingredients.map((ingredient, index) => (
-          <Ingredients ingredient={ingredient} key={index} />
+        {ingredients.map((ingredient) => (
+          <Ingredients ingredient={ingredient} key={menu.id} />
         ))}
       </p>
       {user === `Login` ? null : <ContainerCounter min={0} max={99} step={1} />}
