@@ -1,5 +1,6 @@
 .nameRest {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
     font-weight: bold;
     color: #c95422;
     padding-left: 10px;
@@ -20,4 +21,6 @@
 
 h3 {
     margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

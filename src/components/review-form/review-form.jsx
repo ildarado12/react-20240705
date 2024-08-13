@@ -41,6 +41,7 @@ export const ReviewForm = () => {
       <div>
         <span className={styles.name}>Name:</span>
         <input
+          name="user"
           className={styles.input}
           value={name}
           onChange={(event) => {
@@ -51,6 +52,7 @@ export const ReviewForm = () => {
       <div>
         <span>Text:</span>
         <input
+          name="text"
           className={styles.input}
           value={text}
           onChange={(event) => {

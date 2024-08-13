@@ -1,0 +1,8 @@
+.user {
+    display: inline;
+    margin: 5px;
+    background-color: #f5f6f7;
+    padding: 3px;
+    border: 1px solid #2c2c2c;
+    color: #2c2c2c;
+}
