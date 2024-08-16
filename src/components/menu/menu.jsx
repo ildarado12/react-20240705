@@ -2,16 +2,12 @@ import { useSelector } from "react-redux";
 import styles from "./styles.module.css";
 import { selectDisheById } from "../../redux/entities/dishes";
 import { Ingredients } from "../ingredients/ingredients";
-import { ContainerCounter } from "../counter/container";
-import { useUser } from "../login-context/context";
+import { RestaurantCartSection } from "../restaurant-cart-section/restaurant-cart-section";
 
 export const Menu = ({ id }) => {
-  const { value: user } = useUser();
-
   const menu = useSelector((state) => {
     return selectDisheById(state, id);
   });
-
   const { name, price, ingredients } = menu || {};
 
   if (!name) {
@@ -27,7 +23,7 @@ export const Menu = ({ id }) => {
           <Ingredients ingredient={ingredient} key={ingredient} />
         ))}
       </p>
-      {user === `Login` ? null : <ContainerCounter min={0} max={99} step={1} />}
+      <RestaurantCartSection id={id} />
     </div>
   );
 };

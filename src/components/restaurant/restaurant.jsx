@@ -5,8 +5,11 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import { Menu } from "../menu/menu";
 import { ReviewForm } from "../review-form/review-form";
+import { useUser } from "../login-context/context";
 
 export const Restaurant = ({ id }) => {
+  const { value } = useUser();
+
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
 
   const { name, menu: menuIds, reviews: reviewsIds } = restaurant || {};
@@ -48,7 +51,7 @@ export const Restaurant = ({ id }) => {
           })}
         </ul>
       ) : null}
-      <ReviewForm />
+      {value === "Login" ? null : <ReviewForm />}
     </div>
   );
 };

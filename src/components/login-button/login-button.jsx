@@ -1,8 +1,6 @@
-import { useSelector } from "react-redux";
 import { Button } from "../button/button";
 import { useUser } from "../login-context/context";
 import styles from "./styles.module.css";
-import { selectUserById } from "../../redux/entities/user";
 
 export const UserButton = () => {
   const { value, toggleUser } = useUser();

@@ -24,3 +24,8 @@ h3 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+ul {
+    padding-left: 15px;
+    padding-right: 15px;
+}
