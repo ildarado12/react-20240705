@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/entities/restaurant";
-import { Restaurant } from "../restaurant/restaurant";
 import styles from "./styles.module.css";
+import { RestaurantLink } from "../restautant-link/restaurant-link";
 
 export const RestaurantsList = () => {
   const ids = useSelector(selectRestaurantsIds);
@@ -11,10 +11,10 @@ export const RestaurantsList = () => {
   }
 
   return (
-    <ul>
+    <ul className={styles.restList}>
       {ids.map((id) => (
         <li className={styles.restaurant} key={id}>
-          <Restaurant id={id} />
+          <RestaurantLink id={id} />
         </li>
       ))}
     </ul>

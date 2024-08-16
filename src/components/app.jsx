@@ -4,18 +4,42 @@ import { UserContextProvider } from "./login-context/context";
 import "./app.css";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
-import { RestaurantsList } from "./restaurants-list/restaurants-list";
-import { Cart } from "./cart/cart";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { RestaurantsPage } from "./restaurants-page/restaurants-page";
+import { RestaurantPage } from "./restaurant-page/restaurant-page";
+import { HomePage } from "./home-page/home-page";
+
+const router = createBrowserRouter([
+  {
+    path: `/`,
+    element: <Layout />,
+    children: [
+      {
+        path: `/restaurants`,
+        element: <RestaurantsPage />,
+        children: [
+          {
+            path: `:restaurantId`,
+            element: <RestaurantPage />,
+          },
+        ],
+      },
+      {
+        path: `/home-page`,
+        element: <HomePage />,
+      },
+    ],
+    errorElement: <div>Not Found</div>,
+  },
+]);
 
 export const App = () => {
   return (
-    <Provider store={store} stabilityCheck="never">
+    <Provider store={store}>
       <UserContextProvider>
         <ThemeContextProvider>
-          <Layout>
-            <RestaurantsList />
-            <Cart />
-          </Layout>
+          <RouterProvider router={router} />
         </ThemeContextProvider>
       </UserContextProvider>
     </Provider>
