@@ -6,5 +6,10 @@ h3 {
 }
 
 .text {
+    margin: 0;
     padding: 20px;
+}
+
+a {
+    margin: 20px;
 }
