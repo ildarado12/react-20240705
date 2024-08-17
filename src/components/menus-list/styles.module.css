@@ -1,0 +1,11 @@
+.menuList {
+    display: flex;
+    justify-content: space-around;
+    background-color: #bbb;
+    margin: 0;
+}
+
+.menu {
+    list-style-type: none;
+    text-align: center;
+}

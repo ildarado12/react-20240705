@@ -1,0 +1,22 @@
+.text {
+    background-color: white;
+    color: #2c2c2c;
+    text-align: center;
+    padding: 50px;
+}
+
+h3 {
+    background-color: white;
+    color: #2c2c2c;
+}
+
+h4 {
+    padding: 0;
+}
+
+a {
+    display: block;
+    color: #c95422;
+    list-style-type: none;
+    margin: 0;
+}

@@ -1,0 +1,13 @@
+.review {
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.review:focus {
+    color: #c95422;
+}
+
+h4 {
+    margin: 0;
+    padding: 10px;
+}

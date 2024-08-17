@@ -1,0 +1,11 @@
+.reviewList {
+    display: flex;
+    justify-content: space-around;
+    background-color: #bbb;
+    margin: 0;
+}
+
+.review {
+    list-style-type: none;
+    text-align: center;
+}
