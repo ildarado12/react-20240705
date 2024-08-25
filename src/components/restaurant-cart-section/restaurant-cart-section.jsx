@@ -5,11 +5,11 @@ import {
   selectCartItemAmountById,
 } from "../../redux/ui/cart/cart";
 import { Counter } from "../counter/counter";
-import { selectDisheById } from "../../redux/entities/dishes";
+import { selectDishById } from "../../redux/entities/dishes";
 
 export const RestaurantCartSection = ({ id }) => {
   const dispatch = useDispatch();
-  const { name } = useSelector((state) => selectDisheById(state, id));
+  const { name } = useSelector((state) => selectDishById(state, id));
 
   const amount = useSelector((state) => selectCartItemAmountById(state, name));
 

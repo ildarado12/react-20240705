@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurant";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export const RestaurantLink = ({ id }) => {
@@ -12,8 +12,8 @@ export const RestaurantLink = ({ id }) => {
   }
 
   return (
-    <NavLink className={styles.restaurant} to={id}>
+    <Link className={styles.restaurant} to={id}>
       <h2>{name}</h2>
-    </NavLink>
+    </Link>
   );
 };

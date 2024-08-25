@@ -7,5 +7,21 @@
     font-weight: bold;
     text-align: center;
     color: #f5f6f7;
-    padding-bottom: 20px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+}
+
+a {
+    color: #060606;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #f5f6f7;
 }

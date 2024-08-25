@@ -9,12 +9,13 @@ const initialState = {
     ids: normalizedDishes.map(({id}) => id),
 };
 
-export const disheSlice = createSlice({
-    name: `dishe`,
+export const dishSlice = createSlice({
+    name: `dish`,
     initialState,
     selectors: {
-        selectDisheById: (state, id) => state.entities[id],
+        selectDishById: (state, id) => state.entities[id],
+        selectDishIds: (state) => state.ids,
     }
 });
 
-export const {selectDisheById} = disheSlice.selectors; 
+export const {selectDishById, selectDishIds} = dishSlice.selectors; 

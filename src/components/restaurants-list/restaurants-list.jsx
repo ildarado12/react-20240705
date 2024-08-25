@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/entities/restaurant";
-import styles from "./styles.module.css";
 import { RestaurantLink } from "../restautant-link/restaurant-link";
+import styles from "./styles.module.css";
 
 export const RestaurantsList = () => {
   const ids = useSelector(selectRestaurantsIds);
