@@ -1,20 +1,17 @@
-import { Layout } from "./layout/layout";
-import { RestaurantTab } from "./restaurant-tab/restaurant-tab";
 import { ThemeContextProvider } from "./theme-context/context";
 import { UserContextProvider } from "./login-context/context";
-import "./app.css";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
-import { RestaurantsList } from "./restaurants-list/restaurants-list";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./router/router";
+import "./app.css";
 
 export const App = () => {
   return (
     <Provider store={store}>
       <UserContextProvider>
         <ThemeContextProvider>
-          <Layout>
-            <RestaurantsList />
-          </Layout>
+          <RouterProvider router={Router} />
         </ThemeContextProvider>
       </UserContextProvider>
     </Provider>

@@ -1,54 +1,35 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurant";
-import { Review } from "../review/review";
-import styles from "./styles.module.css";
-import classNames from "classnames";
-import { Menu } from "../menu/menu";
 import { ReviewForm } from "../review-form/review-form";
+import { useUser } from "../login-context/context";
+import { Button } from "../button/button";
+import { useState } from "react";
+import styles from "./styles.module.css";
+import { MenusList } from "../menus-list/menus-list";
+import { ReviewsList } from "../reviews-list/reviews-list";
 
 export const Restaurant = ({ id }) => {
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+  const { value } = useUser();
 
-  const { name, menu: menuIds, reviews: reviewsIds } = restaurant || {};
+  const [info, setInfo] = useState(true);
+  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+  const { name } = restaurant || {};
 
   if (!name) {
     return null;
   }
 
   return (
-    <div>
+    <div className={styles.restaurant}>
       <h2 className={styles.nameRest}>"{name}"</h2>
-      <h3>Menu:</h3>
-      {menuIds?.length ? (
-        <ul>
-          {menuIds.map((menuId) => {
-            return (
-              <li
-                className={classNames(styles.card, styles.review)}
-                key={menuId}
-              >
-                <Menu id={menuId} />
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-      <h3>Reviews:</h3>
-      {reviewsIds?.length ? (
-        <ul>
-          {reviewsIds.map((reviewId) => {
-            return (
-              <li
-                className={classNames(styles.card, styles.review)}
-                key={reviewId}
-              >
-                <Review id={reviewId} />
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-      <ReviewForm />
+      <Button text={`Menu`} disabled={info} onClick={() => setInfo(!info)} />
+      <Button
+        text={`Reviews`}
+        disabled={!info}
+        onClick={() => setInfo(!info)}
+      />
+      <div>{info ? <MenusList id={id} /> : <ReviewsList id={id} />}</div>
+      <div>{value === "Login" ? null : <ReviewForm />}</div>
     </div>
   );
 };

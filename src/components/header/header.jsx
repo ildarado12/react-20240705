@@ -8,6 +8,11 @@ export const Header = () => {
       <ThemeButton />
       <UserButton />
       <h1 className={styles.headerH1}>Restaurants</h1>
+      <div className={styles.link}>
+        <a href="/home-page">Home-page</a>
+        <a href="/restaurants">Restaurants</a>
+        <a href="/dish">Dishes</a>
+      </div>
     </div>
   );
 };

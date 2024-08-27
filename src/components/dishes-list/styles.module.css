@@ -1,4 +1,4 @@
-.restList {
+.dishes {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-.restaurant {
+.dish {
     list-style-type: none;
     text-align: center;
     margin: 20px;

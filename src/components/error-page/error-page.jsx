@@ -1,14 +1,14 @@
-import { Outlet } from "react-router-dom";
 import { Footer } from "../footer/footer";
 import { Header } from "../header/header";
-import { Cart } from "../cart/cart";
+import styles from "./styles.module.css";
 
-export const Layout = () => {
+export const ErrorPage = () => {
   return (
     <div>
       <Header />
-      <Outlet />
-      <Cart />
+      <div className={styles.text}>
+        <h3>Not Found</h3>
+      </div>
       <Footer />
     </div>
   );

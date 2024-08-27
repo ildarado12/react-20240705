@@ -1,14 +1,12 @@
-.restList {
+.reviewList {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #2c2c2c;
+    background-color: #bbb;
     margin: 0;
+    padding: 15px;
 }
 
-.restaurant {
+.review {
     list-style-type: none;
     text-align: center;
-    margin: 20px;
 }

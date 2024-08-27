@@ -1,0 +1,12 @@
+.restaurant {
+    color: #f5f6f7;
+    text-decoration: none;
+}
+
+.restaurant:focus {
+    color: #c95422;
+}
+
+h2 {
+    margin: 0;
+}

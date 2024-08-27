@@ -1,6 +1,9 @@
+.restaurant {
+    margin-left: 20px;
+}
+
 .nameRest {
     margin-top: 20px;
-    margin-bottom: 5px;
     font-weight: bold;
     color: #c95422;
     padding-left: 10px;
@@ -19,8 +22,12 @@
     display: block;
 }
 
-h3 {
-    margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.nameH3 {
+    background-color: #bbb;
+    padding-bottom: 0;
+}
+
+ul {
+    padding-left: 15px;
+    padding-right: 15px;
 }
