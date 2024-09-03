@@ -4,9 +4,9 @@ import { ReviewForm } from "../review-form/review-form";
 import { useUser } from "../login-context/context";
 import { Button } from "../button/button";
 import { useState } from "react";
-import styles from "./styles.module.css";
 import { MenusList } from "../menus-list/menus-list";
 import { ReviewsList } from "../reviews-list/reviews-list";
+import styles from "./styles.module.css";
 
 export const Restaurant = ({ id }) => {
   const { value } = useUser();

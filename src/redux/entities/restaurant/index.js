@@ -1,21 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { normalizedRestaurants } from "../../../constants/normalized-mock";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { getRestaurants } from "./get-restaurants";
 
-const initialState = {
-    entities: normalizedRestaurants.reduce((acc, item) => {
-        acc[item.id] = item; 
-        return acc
-    }, {}),
-    ids: normalizedRestaurants.map(({id}) => id),
-};
+const entityAdapter = createEntityAdapter();
 
 export const restaurantSlice = createSlice({
     name: `restaurant`,
-    initialState,
+    initialState: entityAdapter.getInitialState({requestStatus: `idle`}),
+    extraReducers: (builder) => builder
+    .addCase(getRestaurants.pending, (state) => {
+        state.requestStatus = `pending`;
+    })
+    .addCase(getRestaurants.rejected, (state) => {
+        state.requestStatus = `rejected`;
+    })
+    .addCase(getRestaurants.fulfilled, (state, {payload}) => {
+        state.requestStatus = `fulfilled`;
+
+        entityAdapter.setAll(state, payload);
+    }),
     selectors: {
         selectRestaurantById: (state, id) => state.entities[id],
         selectRestaurantsIds: (state) => state.ids,
+        selectRequestStatus: (state) => state.requestStatus,
     }
 });
 
-export const {selectRestaurantById, selectRestaurantsIds} = restaurantSlice.selectors; 
+export const {selectRestaurantById, selectRestaurantsIds, selectRequestStatus} = restaurantSlice.selectors; 
