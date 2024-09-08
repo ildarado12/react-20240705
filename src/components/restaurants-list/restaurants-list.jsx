@@ -1,21 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectRequestStatus,
-  selectRestaurantsIds,
-} from "../../redux/entities/restaurant";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/entities/restaurant";
 import { RestaurantLink } from "../restautant-link/restaurant-link";
-import { useEffect } from "react";
 import { getRestaurants } from "../../redux/entities/restaurant/get-restaurants";
+import { useRequest } from "../../hooks/use-request";
 import styles from "./styles.module.css";
 
 export const RestaurantsList = () => {
   const ids = useSelector(selectRestaurantsIds);
-  const requestStatus = useSelector(selectRequestStatus);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getRestaurants());
-  }, [dispatch]);
+  const requestStatus = useRequest(getRestaurants);
 
   if (requestStatus === `pending`) {
     return <div>...loading</div>;

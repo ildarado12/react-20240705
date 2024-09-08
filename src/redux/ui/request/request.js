@@ -16,4 +16,4 @@ export const requestSlice = createSlice({
     selectors: {selectRequestStatus: (state, requestId) => state[requestId] || `idle`},
 });
 
-export const {selectRequestStatus} = requestSlice;
+export const {selectRequestStatus} = requestSlice.selectors;
